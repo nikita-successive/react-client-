@@ -27,7 +27,6 @@ const passwordValidation = () => {
   const submitt=()=>{
     var result = emailValidation();
     var password = passwordValidation();
-    console.log(password)
     if(!result){
       alert("email is not in proper format")
     }
