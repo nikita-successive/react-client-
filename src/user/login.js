@@ -1,4 +1,3 @@
-//import React, { useEffect } from 'react'
 import React from 'react';
 import { TextField,Button,Form,FormLayout} from '@shopify/polaris';
 import { useState } from 'react';
@@ -8,7 +7,6 @@ const Login=()=>{
   const [password,setPassword] = useState("");
   const [emailerror,setEmailerror]=useState("");
   const[passerror,setpasswordError]=useState("");
-  
  const emailValidation = () => {
     var regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(email.match(regex)){
@@ -18,7 +16,6 @@ const Login=()=>{
 }
 const passwordValidation = () => {
   const passwordRegex = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
-  console.log(password)
   if(password.match(passwordRegex)){
     
     return true;
@@ -28,14 +25,14 @@ const passwordValidation = () => {
   }
 }
   const submitt=()=>{
-    var res = emailValidation();
-    var pass = passwordValidation();
-    console.log(pass)
-    if(!res){
+    var result = emailValidation();
+    var password = passwordValidation();
+    console.log(password)
+    if(!result){
       alert("email is not in proper format")
     }
     
-    else if (!pass){
+    else if (!password){
       alert("password is not in proper format")
     }
     else{
@@ -44,7 +41,7 @@ const passwordValidation = () => {
     setPassword('');
   }
 }
-const emailerrorFun = ()=>{
+const emailErrorFunction = ()=>{
   const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if(email===""){
     setEmailerror("email is required!");
@@ -57,7 +54,7 @@ const emailerrorFun = ()=>{
       setEmailerror("email is not valid")
     }
 }
-const passworderrorFun = ()=>{
+const passwordErrorFunction = ()=>{
   if(password ===""){
     setpasswordError("password is required!");
   }
@@ -74,13 +71,13 @@ return(
             <div className = "textfield">
      <TextField label="Email"autoComplete="off" align="left" type="email" value= {email}
       onChange= { (newValue) => setEmail(newValue)}
-     onBlur={emailerrorFun}
+     onBlur={emailErrorFunction}
     />
     <span className="error">{emailerror}</span>
             <br/>
             <TextField label="Password"autoComplete="off" align="left" type="password" value = {password}
       onChange= { (newValue) => setPassword(newValue)}
-      onBlur={passworderrorFun}
+      onBlur={passwordErrorFunction}
       />
       <span className="error">{passerror}</span>
       </div>

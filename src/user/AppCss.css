@@ -39,3 +39,7 @@
     font-style:italic;
     border-radius: 40px;
 }
+.error{
+    font-size: medium;
+    color: red;
+}
