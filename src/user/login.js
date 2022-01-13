@@ -5,8 +5,8 @@ import './AppCss.css'
 const Login=()=>{
     const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
-  const [emailerror,setEmailerror]=useState("");
-  const[passworderror,setpasswordError]=useState("");
+  const [emailError,setEmailerror]=useState("");
+  const[passwordError,setPassworderror]=useState("");
  const emailValidation = () => {
     var regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(email.match(regex)){
@@ -17,7 +17,6 @@ const Login=()=>{
 const passwordValidation = () => {
   const passwordRegex = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
   if(password.match(passwordRegex)){
-    
     return true;
   }
   else{
@@ -30,7 +29,6 @@ const passwordValidation = () => {
     if(!result){
       alert("email is not in proper format")
     }
-    
     else if (!password){
       alert("password is not in proper format")
     }
@@ -40,7 +38,7 @@ const passwordValidation = () => {
     setPassword('');
   }
 }
-const emailErrorFunction = ()=>{
+const emailErrorfunction = ()=>{
   const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if(email===""){
     setEmailerror("email is required!");
@@ -53,12 +51,12 @@ const emailErrorFunction = ()=>{
       setEmailerror("email is not valid")
     }
 }
-const passwordErrorFunction = ()=>{
+const passwordErrorfunction = ()=>{
   if(password ===""){
-    setpasswordError("password is required!");
+    setPassworderror("password is required!");
   }
   else{
-    setpasswordError("");
+    setPassworderror("");
   }
 }
 return(
@@ -70,15 +68,15 @@ return(
             <div className = "textfield">
      <TextField label="Email"autoComplete="off" align="left" type="email" value= {email}
       onChange= { (newValue) => setEmail(newValue)}
-     onBlur={emailErrorFunction}
+     onBlur={emailErrorfunction}
     />
-    <span className="error">{emailerror}</span>
+    <span className="error">{emailError}</span>
             <br/>
             <TextField label="Password"autoComplete="off" align="left" type="password" value = {password}
       onChange= { (newValue) => setPassword(newValue)}
-      onBlur={passwordErrorFunction}
+      onBlur={passwordErrorfunction}
       />
-      <span className="error">{passworderror}</span>
+      <span className="error">{passwordError}</span>
       </div>
       <div className="submit">
             <Button submit >Submit</Button>
