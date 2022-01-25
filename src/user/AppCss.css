@@ -43,3 +43,20 @@
     font-size: medium;
     color: red;
 }
+
+.eror{
+    text-align: center;
+        color:red;
+        font-size: 200%;
+        padding-top: 20%;
+        
+    }
+ .dashboard{
+     text-align: center;
+     font-size: large;  
+ } 
+   
+ 
+
+
+
