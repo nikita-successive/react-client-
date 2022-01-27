@@ -2,9 +2,9 @@ import { Card, ResourceItem, ResourceList, TextStyle, Button,  Avatar } from '@s
 import React from 'react';
 import books from '../../data/books/book';
 import { useState, useCallback } from 'react';
-import Add from '../../header/component/Add';
-import Edit from '../../header/component/Edit';
-import Delete from '../../header/component/Delete';
+import Add from '../../header/component/add';
+import Edit from '../../header/component/edit';
+import Delete from '../../header/component/delete';
 const Admin = () => {
     const resourceName = {
         singular: "book",

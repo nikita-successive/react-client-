@@ -1,13 +1,9 @@
 import React from 'react';
 import { TextField,Button,Form,FormLayout} from '@shopify/polaris';
 import { useState } from 'react';
-import './AppCss.css'
-//import Admin from './role/Admin';
+import './AppCss.css';
 import { useNavigate } from 'react-router';
 import Data from '../data/login';
-//import Dashboard from '../dashboard/Dashboard';
-//import User from './role/User';
-//import Trainee from './role/Trainee';
 const Login=()=>{
     const [email,setEmail] = useState("");
   const [pswd,setPassword] = useState("");

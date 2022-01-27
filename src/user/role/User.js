@@ -3,7 +3,7 @@ import React from 'react';
 import books from '../../data/books/book';
 import { useState } from 'react';
 import {  useCallback } from 'react';
-import Add from '../../header/component/Add';
+import Add from '../../header/component/add';
 const User = () => {
     const resourceName = {
         singular: "book",
