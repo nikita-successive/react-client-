@@ -1,8 +1,10 @@
 import React from 'react';
-import {  Modal } from '@shopify/polaris';
+import { Modal } from '@shopify/polaris';
+
 const Delete = (props) => {
-    const {active,handleChange}=props;
+    const { active, handleChange } = props;
     return (
+
         <div>
             <Modal
                 open={active}
@@ -20,10 +22,10 @@ const Delete = (props) => {
                 ]}
             >
                 <Modal.Section>
-                <p>Do You Really Want to Delete this Book?</p>
+                    <p>Do You Really Want to Delete this Book?</p>
                 </Modal.Section>
             </Modal>
-           
+
         </div>
     )
 }

@@ -1,12 +1,14 @@
 import React from 'react';
-import {  Modal } from '@shopify/polaris';
+import { Modal } from '@shopify/polaris';
 import { TextField, Form, FormLayout } from '@shopify/polaris';
 import { useState } from 'react';
+
 const Edit = (props) => {
-    const {active,handleChange}=props;
+    const { active, handleChange } = props;
     const [author, setAuthor] = useState("");
     const [book, setBook] = useState("");
     const [price, setPrice] = useState("");
+
     return (
         <div>
             <Modal
@@ -25,27 +27,27 @@ const Edit = (props) => {
                 ]}
             >
                 <Modal.Section>
-                <Form>
-                <FormLayout>
-                    <div>
-                        <TextField label="Author Name:" autoComplete="off" align="left" type="text" value={author}
-                            onChange={(newValue) => setAuthor(newValue)}
-                        />
-                        <br />
-                        <TextField label="Book Name:" autoComplete="off" align="left" type="text" value={book}
-                            onChange={(newValue) => setBook(newValue)}
-                        />
-                        <br />
-                        <TextField label="Price:" autoComplete="off" align="left" type="text" value={price}
-                            onChange={(newValue) => setPrice(newValue)}
-                        />
-                    </div>
-                </FormLayout>
+                    <Form>
+                        <FormLayout>
+                            <div>
+                                <TextField label="Author Name:" autoComplete="off" align="left" type="text" value={author}
+                                    onChange={(newValue) => setAuthor(newValue)}
+                                />
+                                <br />
+                                <TextField label="Book Name:" autoComplete="off" align="left" type="text" value={book}
+                                    onChange={(newValue) => setBook(newValue)}
+                                />
+                                <br />
+                                <TextField label="Price:" autoComplete="off" align="left" type="text" value={price}
+                                    onChange={(newValue) => setPrice(newValue)}
+                                />
+                            </div>
+                        </FormLayout>
 
-            </Form>
+                    </Form>
                 </Modal.Section>
             </Modal>
-           
+
         </div>
     )
 }

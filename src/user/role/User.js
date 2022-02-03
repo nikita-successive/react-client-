@@ -2,8 +2,9 @@ import { Card, ResourceItem, ResourceList, TextStyle, Button, Avatar } from '@sh
 import React from 'react';
 import books from '../../data/books/book';
 import { useState } from 'react';
-import {  useCallback } from 'react';
+import { useCallback } from 'react';
 import Add from '../../header/component/add';
+
 const User = () => {
     const resourceName = {
         singular: "book",
@@ -12,7 +13,7 @@ const User = () => {
     const [selectedItems, setSelectedItems] = useState([]);
     const [activeUser, setUser] = useState(false);
     const handleChangeUser = useCallback(() => setUser(!activeUser), [activeUser]);
-    
+
     return (
         <Card title="User dashboard" sectioned>
             <p>User can Perform Add action only.</p>
@@ -24,8 +25,9 @@ const User = () => {
                 onSelectionChange={setSelectedItems}
                 selectable
                 renderItem={(item) => {
-                    const { id, name, Author, price,img } = item;
+                    const { id, name, Author, price, img } = item;
                     const media = <Avatar source={img} customer size="medium" name={name} />;
+                    
                     return (
                         <div>
                             <ResourceItem
@@ -41,7 +43,7 @@ const User = () => {
                                 <h3>
                                     <TextStyle variation="strong">Price: {price}</TextStyle>
                                 </h3>
-                                <Add active={activeUser} handleChange={handleChangeUser}/>
+                                <Add active={activeUser} handleChange={handleChangeUser} />
                             </ResourceItem>
 
                         </div>

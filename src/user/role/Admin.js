@@ -5,6 +5,7 @@ import { useState, useCallback } from 'react';
 import Add from '../../header/component/add';
 import Edit from '../../header/component/edit';
 import Delete from '../../header/component/delete';
+
 const Admin = () => {
     const resourceName = {
         singular: "book",
@@ -14,11 +15,10 @@ const Admin = () => {
     const [active, setActive] = useState(false);
     const [activeEdit,setEdit] = useState(false);
     const [activeDelete,setDelete] = useState(false);
-
-
     const handleChange = useCallback(() => setActive(!active), [active]);
     const handleChangeEdit = useCallback(() => setEdit(!activeEdit), [activeEdit]);
     const handleChangeDelete = useCallback(() => setDelete(!activeDelete), [activeDelete]);
+
     return (
         
         <Card title="Admin dashboard" sectioned>
@@ -33,6 +33,7 @@ const Admin = () => {
                 renderItem={(item) => {
                     const { id, name, Author, price ,img} = item;
                     const media = <Avatar source={img} customer size="medium" name={name} />;
+                    
                     return (
                         <div>
                             <ResourceItem
