@@ -7,8 +7,8 @@ import '../../src'
 
 const Dashboard= ()=>{
     const [adminn] = useState(false);
-    const [userss ] = useState(false);
     const [trainee] = useState(false);
+    const [userss ] = useState(false);
     
     return(
         <div className="dashboard">
